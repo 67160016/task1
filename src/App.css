@@ -1,38 +1,42 @@
-function App() {
-  return (
-    <div>
-      <Navbar />
-      <div
-        style={{
-          maxWidth: "900px",
-          margin: "2rem auto",
-          padding: "0 1rem",
-          display: "grid",
-          gridTemplateColumns: "2fr 1fr",
-          gap: "2rem",
-        }}
-      >
-        {/* คอลัมน์ซ้าย: โพสต์ /}
-        <div>
-          <PostList posts={POSTS} />
-        </div>
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
 
-        {/ คอลัมน์ขวา: สมาชิก */}
-        <div>
-          <h2
-            style={{
-              color: "#2d3748",
-              borderBottom: "2px solid #1e40af",
-              paddingBottom: "0.5rem",
-            }}
-          >
-            สมาชิก
-          </h2>
-          {USERS.map((user) => (
-            <UserCard key={user.id} name={user.name} email={user.email} />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
 }
