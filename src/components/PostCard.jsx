@@ -15,4 +15,16 @@ function PostCard({ title, body }) {
   );
 }
 
-export default PostCard;
+export default function PostCount({ count }) {
+  const getStyle = () => {
+    if (count > 10) return { color: "red", fontWeight: "bold" };
+    return { color: "black" };
+  };
+
+  const getMessage = () => {
+    if (count === 0) return "ยังไม่มีโพสต์";
+    return `โพสต์ทั้งหมด: ${count} รายการ`;
+  };
+
+  return <p style={getStyle()}>{getMessage()}</p>;
+}
